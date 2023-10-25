@@ -7,6 +7,7 @@ namespace FizzBuzzTDDTest
     {
         [TestMethod]
         [DataRow(1, "1")]
+        [DataRow(2, "2")]
         public void NormalNumberReturnsNumber(int input, string expected)
         {
             var fizzBuzz = new FizzBuzz();

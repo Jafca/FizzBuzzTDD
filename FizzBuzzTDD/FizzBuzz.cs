@@ -6,11 +6,19 @@
         {
             var result = string.Empty;
 
-            if (number % 3 == 0)
-                result += "Fizz";
+            var rules = new List<IRule>
+            {
+                new FizzRule(),
+                new BuzzRule(),
+            };
 
-            if (number % 5 == 0)
-                result += "Buzz";
+            foreach (var rule in rules)
+            {
+                if (rule.Check(number))
+                {
+                    result += rule.Output();
+                }
+            }
 
             return string.IsNullOrEmpty(result) ? number.ToString() : result;
         }

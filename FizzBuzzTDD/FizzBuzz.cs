@@ -4,7 +4,7 @@
     {
         public string Run(int number)
         {
-            return string.Empty;
+            return "1";
         }
     }
 }

@@ -4,5 +4,6 @@
     {
         public bool Check(int number) => number % 3 == 0;
         public string Output() => "Fizz";
+        public int GetPriority() => 3;
     }
 }

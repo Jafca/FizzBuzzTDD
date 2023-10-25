@@ -21,6 +21,8 @@ namespace FizzBuzzTDD
                     rules.Add((IRule)instance);
                 }
             }
+
+            rules.Sort((x, y) => x.GetPriority().CompareTo(y.GetPriority()));
         }
 
         public string Run(int number)

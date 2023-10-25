@@ -4,5 +4,6 @@
     {
         bool Check(int number);
         string Output();
+        int GetPriority();
     }
 }

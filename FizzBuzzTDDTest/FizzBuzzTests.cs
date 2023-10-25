@@ -6,11 +6,13 @@ namespace FizzBuzzTDDTest
     public class FizzBuzzTests
     {
         [TestMethod]
-        [DataRow(1, "1")]
-        [DataRow(2, "2")]
-        public void NormalNumberReturnsNumber(int input, string expected)
+        [DataRow(1)]
+        [DataRow(2)]
+        [DataRow(98)]
+        public void NormalNumberReturnsNumber(int input)
         {
             var fizzBuzz = new FizzBuzz();
+            var expected = input.ToString();
 
             var actual = fizzBuzz.Run(input);
 
@@ -18,10 +20,12 @@ namespace FizzBuzzTDDTest
         }
 
         [TestMethod]
-        [DataRow(3, "Fizz")]
-        public void Number3ReturnsFizz(int input, string expected)
+        [DataRow(3)]
+        [DataRow(66)]
+        public void MultipleOf3ReturnsFizz(int input)
         {
             var fizzBuzz = new FizzBuzz();
+            var expected = "Fizz";
 
             var actual = fizzBuzz.Run(input);
 
@@ -29,10 +33,12 @@ namespace FizzBuzzTDDTest
         }
 
         [TestMethod]
-        [DataRow(5, "Buzz")]
-        public void Number5ReturnsBuzz(int input, string expected)
+        [DataRow(5)]
+        [DataRow(55)]
+        public void MultipleOf5ReturnsBuzz(int input)
         {
             var fizzBuzz = new FizzBuzz();
+            var expected = "Buzz";
 
             var actual = fizzBuzz.Run(input);
 
@@ -40,10 +46,12 @@ namespace FizzBuzzTDDTest
         }
 
         [TestMethod]
-        [DataRow(15, "FizzBuzz")]
-        public void Number15ReturnsFizzBuzz(int input, string expected)
+        [DataRow(15)]
+        [DataRow(90)]
+        public void MultipleOf15ReturnsFizzBuzz(int input)
         {
             var fizzBuzz = new FizzBuzz();
+            var expected = "FizzBuzz";
 
             var actual = fizzBuzz.Run(input);
 

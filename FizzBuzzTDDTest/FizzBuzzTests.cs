@@ -27,5 +27,16 @@ namespace FizzBuzzTDDTest
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [DataRow(5, "Buzz")]
+        public void Number5ReturnsBuzz(int input, string expected)
+        {
+            var fizzBuzz = new FizzBuzz();
+
+            var actual = fizzBuzz.Run(input);
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

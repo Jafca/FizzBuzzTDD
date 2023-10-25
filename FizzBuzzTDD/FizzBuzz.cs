@@ -39,5 +39,16 @@ namespace FizzBuzzTDD
 
             return string.IsNullOrEmpty(result) ? number.ToString() : result;
         }
+
+        public void RunRange(int start, int end)
+        {
+            // Recursion
+            if (start <= end)
+            {
+                var result = Run(start);
+                Console.WriteLine(result);
+                RunRange(++start, end);
+            }
+        }
     }
 }

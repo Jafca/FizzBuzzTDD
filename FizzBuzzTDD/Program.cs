@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             var fizzBuzz = new FizzBuzz();
-            fizzBuzz.Run(1);
+            fizzBuzz.RunRange(1, 100);
         }
     }
 }

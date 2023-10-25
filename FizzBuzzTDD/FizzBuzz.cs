@@ -4,10 +4,11 @@ namespace FizzBuzzTDD
 {
     public class FizzBuzz
     {
-        public string Run(int number)
+        private readonly List<IRule> rules;
+
+        public FizzBuzz() 
         {
-            var result = string.Empty;
-            var rules = new List<IRule>();
+            rules = new List<IRule>();
 
             var ruleTypes = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(type => typeof(IRule).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract);
@@ -20,6 +21,11 @@ namespace FizzBuzzTDD
                     rules.Add((IRule)instance);
                 }
             }
+        }
+
+        public string Run(int number)
+        {
+            var result = string.Empty;
 
             foreach (var rule in rules)
             {

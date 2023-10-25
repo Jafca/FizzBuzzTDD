@@ -4,13 +4,15 @@
     {
         public string Run(int number)
         {
+            var result = string.Empty;
+
             if (number % 3 == 0)
-                return "Fizz";
+                result += "Fizz";
 
             if (number % 5 == 0)
-                return "Buzz";
+                result += "Buzz";
 
-            return number.ToString();
+            return string.IsNullOrEmpty(result) ? number.ToString() : result;
         }
     }
 }
